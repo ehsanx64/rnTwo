@@ -14,7 +14,7 @@ function Contact({route, navigation }) {
     } 
 
     return (
-        <AppScreen nav={navigation} title="Contact">
+        <AppScreen nav={navigation} title="Contact" subTitle="Send a message">
             <View>
                 <Text>Welcome to Contact screen</Text>
                 <Text>You are comming from: {referrer}</Text>

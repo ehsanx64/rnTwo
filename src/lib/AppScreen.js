@@ -1,8 +1,9 @@
 import React from 'react';
+import _ from 'lodash';
 import { Text } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import {
-    Container, Content, Title, Body,
+    Container, Content, Title, Body, Subtitle,
     Header, Left, Right, Icon, Button
 } from 'native-base';
 import * as Font from 'expo-font';
@@ -13,7 +14,8 @@ export default class AppScreen extends React.Component {
         super(props);
 
         this.nav = props.nav;
-        this.title = props.title;
+        this.title = _.get(props, 'title', '');
+        this.subTitle = _.get(props, 'subTitle', '');
         this.state = {
             isReady: false,
         };
@@ -26,6 +28,16 @@ export default class AppScreen extends React.Component {
             ...Ionicons.font,
         });
         this.setState({ isReady: true });
+    }
+
+    renderSubtitle() {
+        let st = this.subTitle;
+
+        if (st !== '') {
+            return <Subtitle>{st}</Subtitle>
+        }
+
+        return null;
     }
 
     render() {
@@ -45,6 +57,7 @@ export default class AppScreen extends React.Component {
                     </Left>
                     <Body>
                         <Title>{this.title}</Title>
+                        {this.renderSubtitle()}
                     </Body>
                     <Right />
                 </Header>

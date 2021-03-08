@@ -15,7 +15,7 @@ function About({ route, navigation }) {
     } 
 
     return (
-        <AppScreen nav={navigation} title="About">
+        <AppScreen nav={navigation} title="About" subTitle="What is all about?!">
             <View>
                 <Text>Welcome to About screen</Text>
                 <Text>You are comming from: {referrer}</Text>
