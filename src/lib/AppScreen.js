@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import { Text } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import {
     Container, Content, Title, Body, Subtitle,
@@ -8,6 +8,12 @@ import {
 } from 'native-base';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
+
+const styles = StyleSheet.create({
+    mainContentWrapper: {
+        padding: 10
+    }
+})
 
 export default class AppScreen extends React.Component {
     constructor(props) {
@@ -63,7 +69,9 @@ export default class AppScreen extends React.Component {
                 </Header>
 
                 <Content>
-                    {this.props.children}
+                    <View style={styles.mainContentWrapper}>
+                        {this.props.children}
+                    </View>
                 </Content>
             </Container>
         );
