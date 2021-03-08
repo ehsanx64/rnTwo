@@ -13,7 +13,7 @@ export default class Home extends React.Component {
 
     render() {
         return (
-            <AppScreen nav={this.props.navigation}>
+            <AppScreen nav={this.props.navigation} title="rnTwo">
                 <Text style={styles.topHeader}>Welcome to rnTwo</Text>
             </AppScreen>
         );

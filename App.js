@@ -9,23 +9,16 @@ import 'react-native-gesture-handler';
 import About from './src/screen/About';
 import Contact from './src/screen/Contact';
 import Home from './src/screen/Home';
+import HttpCat from './src/screen/HttpCat';
 
 const Drawer = createDrawerNavigator();
 const DrawerNavigator = () => {
     return (
         <Drawer.Navigator initialRouteName="Home" drawerPosition="left">
-            <Drawer.Screen name="Home" component={Home} options={{
-                title: 'My home',
-                headerStyle: {
-                    backgroundColor: '#f4511e',
-                },
-                headerTintColor: '#fff',
-                headerTitleStyle: {
-                    fontWeight: 'bold',
-                },
-            }} />
+            <Drawer.Screen name="Home" component={Home} />
             <Drawer.Screen name="About" component={About} />
             <Drawer.Screen name="Contact" component={Contact} />
+            <Drawer.Screen name="HttpCat" component={HttpCat} />
         </Drawer.Navigator>
     )
 }

@@ -8,11 +8,12 @@ import {
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
 
-export default class Home extends React.Component {
+export default class AppScreen extends React.Component {
     constructor(props) {
         super(props);
 
         this.nav = props.nav;
+        this.title = props.title;
         this.state = {
             isReady: false,
         };
@@ -43,7 +44,7 @@ export default class Home extends React.Component {
                         </Button>
                     </Left>
                     <Body>
-                        <Title>rnTwo</Title>
+                        <Title>{this.title}</Title>
                     </Body>
                     <Right />
                 </Header>
